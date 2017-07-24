@@ -1,24 +1,49 @@
-# README
+## companiesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|index :true, null: false , unique: true |
+|business|text|-|
+|president|string|-|
+|foundation|string|-|
+|address|text|-|
+|vision_mission|string|-|
+|url|string|-|
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Association
+- has_many :stories
+- has_many :topics
 
-Things you may want to cover:
+## storiesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|title|string|index :true, null: false , unique: true |
+|story|text|null: false|
+|image|string|-|
 
-* Ruby version
+### Association
+- belongs_to :company
+- has_many :topics, through: story_topics
+- has_many :story_topics
 
-* System dependencies
+## topicsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|index :true, null: false , unique: true |
 
-* Configuration
+### Association
+- has_many :stories, through: story_topics
+- has_many :companies
+- has_many :story_topics
 
-* Database creation
+<!-- 中間テーブル -->
 
-* Database initialization
+## story_topicsテーブル
 
-* How to run the test suite
+|Column|Type|Options|
+|------|----|-------|
+|story_id|integer|null: false, foreign_key: true|
+|topic_id|integer|null: false, foreign_key: true|
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Association
+- belongs_to :story
+- belongs_to :topic
