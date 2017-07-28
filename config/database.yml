@@ -51,5 +51,5 @@ production:
   <<: *default
   database: PRTable_production
   username: root
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  password: tadas1n1110
   socket: /var/lib/mysql/mysql.sock
