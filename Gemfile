@@ -47,6 +47,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails', "~> 4.4.1"
   gem 'faker'
+
+  Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
 end
 
 group :production do
