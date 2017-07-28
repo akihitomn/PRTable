@@ -1,0 +1,64 @@
+!!!
+%html{:prefix => "og: http://ogp.me/ns#"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %title PRTable
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %meta{:content => "width=1240,minimum-scale=0,maximum-scale=10", :name => "viewport"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %title PR Table | 企業・団体の想いを届けるストーリーテリングサービス
+    %meta{:content => "PR Table,ストーリー,PRテーブル,ステークホールダー", :name => "keywords"}/
+    %meta{:content => "PR Tableは企業・団体の“想い”を言語化し、ステークホルダーに伝えるために最適化したストーリーの作成・蓄積・活用サービスです。ミスマッチのない社会を実現するため、PR・HR・IRに効果的なストーリーを掘り起こし、届ける仕組みを提供します。", :name => "description"}/
+    %meta{:content => "on", "http-equiv" => "x-dns-prefetch-control"}/
+    /
+      <link rel="dns-prefetch" href="//connect.facebook.net">
+      <link rel="dns-prefetch" href="//s-static.ak.facebook.com">
+      <link rel="dns-prefetch" href="//static.ak.fbcdn.net">
+      <link rel="dns-prefetch" href="//fonts.googleapis.com">
+      <link href="/assets/style.css" rel="stylesheet">
+      <link href="//fonts.googleapis.com/css?family=Roboto%7COpen+Sans:400,300,600,700,800,300italic,400italic,400,300,600,700%7CRaleway:300,400,700%7CQuicksand:400,700" rel="stylesheet" type="text/css">
+    /
+      <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-51475403-3', 'auto');
+      ga('require', 'displayfeatures');
+      ga('require', 'linkid', 'linkid.js');
+      ga('send', 'pageview');
+      </script>
+      <script src="/assets/jquery-1.12.3.min.js"></script>
+    /
+      <link href="/assets/form.css" rel="stylesheet">
+      <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+      <link rel="apple-touch-icon" href="/assets/apple-touch-icon57.png">
+      <link rel="apple-touch-icon" sizes="57x57" href="/assets/apple-touch-icon57.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="/assets/apple-touch-icon72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="/assets/apple-touch-icon114.png">
+      <link rel="apple-touch-icon" sizes="144x144" href="/assets/apple-touch-icon144.png">
+    %meta{:content => "1375887599325578", :property => "fb:pages"}/
+    %meta{:content => "932659470100788", :property => "fb:app_id"}/
+    %meta{:content => "ja_JP", :property => "og:locale"}/
+    %meta{:content => "PR Table | 企業・団体の想いを届けるストーリーテリングサービス", :property => "og:title"}/
+    %meta{:content => "website", :property => "og:type"}/
+    %meta{:content => "https://www.pr-table.com/", :property => "og:url"}/
+    %meta{:content => "https://www.pr-table.com/assets/ogp.png", :property => "og:image"}/
+    %meta{:content => "PR Table", :property => "og:site_name"}/
+    %meta{:content => "PR Tableは企業・団体が“想い”を言語化し、ステークホルダーに伝えるために最適化したストーリーの作成・蓄積・活用サービスです。", :property => "og:description"}/
+    %meta{:content => "https://www.facebook.com/prtable", :property => "article:publisher"}/
+    %meta{:content => "", :property => "article:published_time"}/
+    %meta{:content => "", :property => "article:modified_time"}/
+    %meta{:content => "", :property => "og:updated_time"}/
+    %meta{:content => "summary_large_image", :name => "twitter:card"}/
+    %meta{:content => "@PR_Table", :name => "twitter:site"}/
+    %meta{:content => "@PR_Table", :name => "twitter:creator"}/
+    %meta{:content => "PR Table | \n    企業・団体の想いを届けるストーリーテリングサービス", :name => "twitter:title"}/
+    %meta{:content => "PR Tableは企業・団体が“想い”を言語化し、ステークホルダーに伝えるために最適化したストーリーの作成・蓄積・活用サービスです。", :name => "twitter:description"}/
+    %meta{:content => "PR Table", :name => "twitter:domain"}/
+    %meta{:content => "https://www.pr-table.com/assets/ogp.png", :name => "twitter:image:src"}/
+  %body
+    = yield
