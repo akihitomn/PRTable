@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  root 'companies#index'
-  resources :stories
-  resources :companies
+  root 'stories#index'
+  resources :stories, only: [:index, :new, :create] do
+  end
+  # resources :companies
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
