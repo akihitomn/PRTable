@@ -12,6 +12,7 @@
 ### Association
 - has_many :stories
 - has_many :topics
+- has_many :users
 
 ## storiesテーブル
 |Column|Type|Options|
@@ -24,6 +25,7 @@
 - belongs_to :company
 - has_many :topics, through: story_topics
 - has_many :story_topics
+- has_many :messages
 
 ## topicsテーブル
 |Column|Type|Options|
@@ -35,10 +37,20 @@
 - has_many :companies
 - has_many :story_topics
 
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|index :true, null: false , unique: true |
+|inquiry|text|-|
+|message|text|-|
+
+### Association
+- belongs_to :company
+- has_many :messages
+
 <!-- 中間テーブル -->
 
 ## story_topicsテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |story_id|integer|null: false, foreign_key: true|
@@ -47,3 +59,13 @@
 ## Association
 - belongs_to :story
 - belongs_to :topic
+
+## messagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|message|text|-|
+|image|string|-|
+
+## Association
+- belongs_to :story
+- belongs_to :user
