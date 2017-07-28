@@ -1,0 +1,18 @@
+= form_with(model: story, local: true) do |form|
+  - if story.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(story.errors.count, "error")
+        prohibited this story from being saved:
+      %ul
+        - story.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = form.label :title
+    = form.text_field :title, id: :story_title
+    = form.label :story
+    = form.text_field :story, id: :story_story
+    = form.label :image
+    = form.text_field :image, id: :story_image
+  .actions
+    = form.submit
