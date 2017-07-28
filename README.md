@@ -1,71 +1,24 @@
-## companiesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|index :true, null: false , unique: true |
-|business|text|-|
-|president|string|-|
-|foundation|string|-|
-|address|text|-|
-|vision_mission|string|-|
-|url|string|-|
+# README
 
-### Association
-- has_many :stories
-- has_many :topics
-- has_many :users
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-## storiesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|title|string|index :true, null: false , unique: true |
-|story|text|null: false|
-|image|string|-|
+Things you may want to cover:
 
-### Association
-- belongs_to :company
-- has_many :topics, through: story_topics
-- has_many :story_topics
-- has_many :messages
+* Ruby version
 
-## topicsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|index :true, null: false , unique: true |
+* System dependencies
 
-### Association
-- has_many :stories, through: story_topics
-- has_many :companies
-- has_many :story_topics
+* Configuration
 
-## usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|index :true, null: false , unique: true |
-|inquiry|text|-|
-|message|text|-|
+* Database creation
 
-### Association
-- belongs_to :company
-- has_many :messages
+* Database initialization
 
-<!-- 中間テーブル -->
+* How to run the test suite
 
-## story_topicsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|story_id|integer|null: false, foreign_key: true|
-|topic_id|integer|null: false, foreign_key: true|
+* Services (job queues, cache servers, search engines, etc.)
 
-## Association
-- belongs_to :story
-- belongs_to :topic
+* Deployment instructions
 
-## messagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|message|text|-|
-|image|string|-|
-
-## Association
-- belongs_to :story
-- belongs_to :user
+* ...
