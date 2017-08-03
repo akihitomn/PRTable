@@ -1,0 +1,25 @@
+- if controller_name != 'sessions'
+  .another-field-link
+  / = link_to "ログイン", new_session_path(resource_name)
+  %br/
+- if devise_mapping.registerable? && controller_name != 'registrations'
+  .another-field-link
+    = link_to "新規アカウント登録（問い合わせ）", new_registration_path(resource_name)
+  %br/
+- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+  .another-field-link
+    = link_to "パスワードをお忘れの方", new_password_path(resource_name)
+  %br/
+- if devise_mapping.confirmable? && controller_name != 'confirmations'
+  .another-field-link
+  = link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name)
+  %br/
+- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks'
+  .another-field-link
+    = link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name)
+  %br/
+- if devise_mapping.omniauthable?
+  - resource_class.omniauth_providers.each do |provider|
+    .another-field-link
+      = link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider)
+    %br/

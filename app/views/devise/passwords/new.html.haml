@@ -1,0 +1,13 @@
+= render 'layouts/header'
+.container.single-window
+  %section.single-form
+    %h1 パスワードをお忘れの方
+    %p.forgot-password-description 登録されたメールアドレス宛にパスワード再設定のリンクを送付します
+    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+      = devise_error_messages!
+      .field-input
+        = f.email_field :email, autofocus: true, placeholder: 'メールアドレス', class: 'field-content'
+      .actions
+        = f.submit "送信", class: 'field-btn'
+= render 'layouts/footer-nav'
+= render 'layouts/footer-icons'

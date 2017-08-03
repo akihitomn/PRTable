@@ -22,6 +22,7 @@
 |image|string|-|
 
 ### Association
+- belongs_to :user
 - belongs_to :company
 - has_many :topics, through: story_topics
 - has_many :story_topics
@@ -46,6 +47,7 @@
 
 ### Association
 - belongs_to :company
+- has_many :stories
 - has_many :messages
 
 <!-- 中間テーブル -->
