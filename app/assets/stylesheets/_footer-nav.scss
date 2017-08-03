@@ -1,0 +1,29 @@
+#footer-wrapper {
+  clear: both;
+  background-color: #FFF;
+  #footer {
+    width: 1240px;
+    margin: auto;
+    #f-nav {
+     border-top: 1px solid #EBEBEB;
+     display: block;
+     padding-top: 4em;
+     ul {
+      text-align: center;
+      li {
+        box-sizing: border-box;
+        padding: 0.5em 1em;
+        display: inline-block;
+        list-style: none;
+        letter-spacing: normal;
+            // vertical-align: top;
+            a {
+              color: #333;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+    }
+  }

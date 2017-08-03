@@ -1,13 +1,13 @@
 //変数定義
-
-
+$border-gray: 1px solid #F4F4F4;
+$border-darkgray: 1px solid #EBEBEB;
 
 //関数定義
 
 
 
 //アイコンやスタイルのまとめ
-  .btn{
+.btn{
     display: block;
     border: 1px solid #CCC;
     border-radius: 20px;
@@ -16,7 +16,7 @@
     padding: 0 2em;
     font-size: 0.8rem;
     text-decoration: none;
- }
+}
 
 .top-company_name {
     color: #FFF;
@@ -38,4 +38,72 @@
     font-weight: bold;
     letter-spacing: normal;
     font-family: "ＭＳ Ｐゴシック";
+}
+
+.signUpTopBtn {
+    display: inline-block;
+    background-color: #29d9c2;
+    color: #FFF;
+    font-weight: bold;
+    padding: .6em 2.5em;
+    font-size: 1.5rem;
+    border-radius: 2em;
+    text-decoration: none;
+    letter-spacing: 3px;
+}
+
+.signUpMiddleBtn {
+    display: inline-block;
+    background-color: #29d9c2;
+    color: #FFF;
+    font-weight: bold;
+    padding: .4em 1.5em;
+    font-size: 1rem;
+    border-radius: 2em;
+    text-decoration: none;
+}
+
+.signUpBottomBtn {
+    width: 50%;
+    margin: 2em auto;
+    background-color: #29D9C2;
+    color: #FFF;
+    border: none;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 1em 2em;
+    letter-spacing: 80px;
+    padding-left: 130px;
+}
+
+.signUp-innerDes {
+    border-bottom: $border-gray;
+    max-width: 1160px;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 4em 2em;
+}
+
+.middleHeadline {
+    font-size: 2.5rem;
+    margin-bottom: .5em;
+    color: #444;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+}
+
+.smallHeadline {
+    font-size: 1.7rem;
+    color: #666;
+    letter-spacing: 0.1em;
+}
+
+.signUp-p {
+    color: #666;
+    font-size: 1.4rem;
+}
+
+.icon-copose {
+    content: "\f12c";
 }

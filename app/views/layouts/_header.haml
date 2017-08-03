@@ -1,0 +1,41 @@
+%header#header
+  #global-header
+    #logo
+      %a{:alt => "PR Table", :href => "/"}
+        /
+          <img src="/assets/logo.svg" width="95" height="21" alt="PR Table">
+    %nav#g-nav
+      %ul
+        %li
+          %a{:href => ""} ストーリー
+        %li
+          %a{:href => ""} 企業
+        %li
+          %a#topic-trigger{:href => ""} トピック
+        %li
+          %a{:href => "", :target => "_blank"} PR Tableとは？
+    .buttons
+      #create
+        = link_to "ストーリーを作成", new_story_path, class: 'btn'
+      #login
+        = link_to "ログイン / 新規登録", new_user_session_path, class: 'btn'
+      #search
+        .search-wrapper{"data-ic-class" => "search-trigger"}
+          %i.fa.fa-search
+          /
+            <form id="search_form">
+            <input id="search" type="text" data-ic-class="search-input" placeholder="ストーリーを検索">
+            </form>
+.top__header-tags
+  %ul
+    %li
+      %a{:href => ""}
+    /
+      <li><a href="/tag/research-development">#研究開発</a></li>
+      <li><a href="/tag/member">#社員・職員</a></li>
+      <li><a href="/tag/ipo">#IPO</a></li>
+      <li><a href="/tag/csr">#CSR・社会貢献活動</a></li>
+      <li><a href="/tag/internet-of-things">#IoT</a></li>
+      <li><a href="/tag/kumamoto">#熊本</a></li>
+      <li><a href="/tag/brother">#兄弟</a></li>
+      <li><a href="/tag/tokyo-olympic">#東京五輪2020</a></li>
