@@ -136,12 +136,12 @@
             .signUp__wrap__sixthContents--inner-content-form-run
               = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
                 = devise_error_messages!
-                .signUpField
-                  .signUpFieldLabel
-                    = f.label :name, "会社名"
-                    %span 必須
-                  .signUpFieldInput
-                    = f.text_field :name, class: 'signUpFieldInput-inner'
+                / .signUpField
+                /   .signUpFieldLabel
+                /     = f.label :name, "会社名"
+                /     %span 必須
+                /   .signUpFieldInput
+                /     = f.text_field :name, class: 'signUpFieldInput-inner'
                 / .signUpField
                 /   .signUpFieldLabel
                 /     = f.label :name, "部署・役職"
