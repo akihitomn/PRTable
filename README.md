@@ -44,6 +44,8 @@
 |name|string|index :true, null: false , unique: true |
 |inquiry|text|-|
 |message|text|-|
+|company_id|integer|index :true ,unique: true|
+|email|string|index :true, foreign_key: true|
 
 ### Association
 - belongs_to :company
