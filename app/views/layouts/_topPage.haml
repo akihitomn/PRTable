@@ -1,0 +1,80 @@
+%body.top
+  #wrap.gray
+    = render 'layouts/header'
+    %section#p-stories
+      .picup-2stories
+        - @stories.limit(1).each do |story|
+          .story
+            %a{href: "/companies/#{story.company.id}/stories/#{story.id}"}
+              %p.img
+                = image_tag story.image, class: 'top_img'
+                %span.story-left-name.top-company_name
+                  = story.company.name
+                %strong.story-left-title.top-title
+                  = story.title
+        - @stories.limit(1).offset(1).each do |story|
+          .story
+            %a{href: "/companies/#{story.company.id}/stories/#{story.id}"}
+              %p.img
+                = image_tag story.image, class: 'top_img'
+                %span.story-right-name.top-company_name
+                  = story.company.name
+                %strong.story-right-title.top-title
+                  = story.title
+    .container
+      %main#left-contents
+        %section.stories
+          - @stories.offset(2).each do |story|
+            .left-contents__block
+              %a{href: "/companies/#{story.company.id}/stories/#{story.id}"}
+                .hoverground
+                  = image_tag story.image, class: 'middle-img'
+                  %strong
+                    = story.title
+                  %span
+                    = story.company.name
+          = paginate(@stories)
+      #side-contents
+        %section.side-stories
+          %h2 注目ストーリー
+          .side-wrap
+            - 1.upto(3) do |i|
+              %article
+                %a{:href => ""}
+                  .hoverground
+                    = image_tag "http://media.istockphoto.com/photos/japanese-baby-girl-is-happy-with-fruits-picture-id487108170", class: "side-img"
+                    .story-info
+                      %strong カンカンカンカン晩餐会！焼肉焼いても家焼くな！！
+                      .company-name 日●食研 Network Lab
+        %section.side-tags
+          %h2 おすすめトピック
+          .side-wrap
+            %ul
+              - 1.upto(10) do |i|
+                %li
+                  %a{:href => ""} スタートアップ
+                %li
+                  %a{:href => ""} 晩餐会
+          .more
+            %a{:href => ""}
+              %i.fa.fa-chevron-right{"aria-hidden" => "true"}>
+              トピック一覧
+        %section.side-companylist
+          %h2 ストーリー掲載企業
+          .side-wrap
+            - 1.upto(5) do |i|
+              %a{:href => ""}
+                %figure
+                  .img
+                    %img{:alt => "", :src => ""}/
+                  %figcaption 株式会社きゃりーぱみゆぱむ
+          .more
+            %a{:href => ""}
+              %i.fa.fa-chevron-right{"aria-hidden" => "true"}>
+              ストーリー掲載企業一覧
+        %section.banner
+          %figure
+            %a{:href => ""}
+              %img{:src => ""}/
+    = render 'layouts/footer-nav'
+    = render 'layouts/footer-icons'

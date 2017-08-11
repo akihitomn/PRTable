@@ -69,12 +69,13 @@ $border-darkgray: 1px solid #EBEBEB;
     background-color: #29D9C2;
     color: #FFF;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     border-radius: 5px;
     font-weight: bold;
-    padding: 1em 2em;
+    padding: .8em 1.5em;
     letter-spacing: 80px;
-    padding-left: 130px;
+    padding-left: 110px;
+    box-shadow: 0 3px 0 0 #40a29f;
 }
 
 .signUp-innerDes {
@@ -107,3 +108,21 @@ $border-darkgray: 1px solid #EBEBEB;
 .icon-copose {
     content: "\f12c";
 }
+
+.storyCtIconBox {
+  text-decoration: none;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+// .iconForm {
+//     display: inline-block;
+//     font: normal normal normal 14px/1 FontAwesome;
+//     font-size: inherit;
+//     text-rendering: auto;
+//     -webkit-font-smoothing: antialiased;
+// }

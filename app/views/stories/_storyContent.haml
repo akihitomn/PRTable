@@ -1,0 +1,244 @@
+.breadcrumbsWrap
+  %section.breadcrumbsWrap--index
+    %a{:href => "/"} HOME
+    %a{:href => ""}
+      = @story.company.name
+    %span
+      = @story.title
+.container
+  %main.container--storyCt{:role => "main"}
+    %article.container--storyCt__content
+      .container--storyCt__content-author
+        %a{:href => ""}
+          %figure
+            .storyCtTopImg
+              / = image_tag "https://www.pr-table.com/upimgs/profile_images/926/medium/b42d77d7c6f5f189a70dce0e7156a31004a4c0e6.png?1501749720", class: 'storyCtTopImgLogo'
+              /{"data-original" => "/upimgs/profile_images/926/medium/b42d77d7c6f5f189a70dce0e7156a31004a4c0e6.png?1501749720"}/
+            %figcaption
+              = @story.company.name
+      %h1
+        = @story.title
+      .container--storyCt__content-socials
+        %ul
+          %li
+            %a.ctFacebook.storyCtIconBox
+              / {:href => "http://www.facebook.com/share.php?u=https://www.pr-table.com/raksul/stories/685"}
+              %i.fa.fa-facebook
+          %li
+            %a.ctEight.storyCtIconBox
+              / {:href => "https://8card.net/posts/links/new?application_id=60920482208541&url=https://www.pr-table.com/raksul/stories/685"}
+              %img{:alt => "eight", :height => "13", :src => "https://materials.8card.net/web/top/images/v8/step8.svg", :width => "19"}/
+          %li
+            %a.ctTwitter.storyCtIconBox
+              / {:href => "http://twitter.com/share?url=https://www.pr-table.com/raksul/stories/685&via=PR_Table&text=働きやすさは「精神的なサポート」に宿る。子育て社員と振り返る、ラクスルの仕組み", :target => "_blank"}
+              %i.fa.fa-twitter
+          %li
+            %a.ctHatena.storyCtIconBox
+              / {:href => "http://b.hatena.ne.jp/entry/https://www.pr-table.com/raksul/stories/685"}
+              %img{:height => "13", :src => "https://lh3.googleusercontent.com/8A_I8WUzV6NcLv8JP5cJDLL-1EeYwIPeR80ewaiTySdFYiCR3y5CdAkckJBGSR51FYI=w300", :width => "15"}/
+          %li
+            %a.ctPocket.storyCtIconBox
+              / {:href => "http://getpocket.com/edit?url=https://www.pr-table.com/raksul/stories/685&title=働きやすさは「精神的なサポート」に宿る。子育て社員と振り返る、ラクスルの仕組み"}
+              %img{:height => "13", :src => "http://your-knowhow.com/mercari/images/sns.area/pocket.mb.png", :width => "15"}/
+      %section.container--storyCt__content-topics
+        %h2
+        %figure
+          .storyCt-img
+            %img
+              = image_tag @story.image
+            / {src: "https://www.pr-table.com/upimgs/story_images/3597/large/96fc2cb6b57616642135d2eefcb2d2db6019261b.jpg?1501121062"}
+        .storyCt-body
+          %p
+            = @story.body
+      %section.container--storyCt__content-footer
+        .container--storyCt__content-footer-socials
+          %ul
+            %li
+              %a.ftFacebook
+                / {:href => "http://www.facebook.com/share.php?u=https://www.pr-table.com/raksul/stories/685"}
+                %i.fa.fa-facebook
+            %li
+              %a.ftEight
+                / {:href => "https://8card.net/posts/links/new?application_id=60920482208541&url=https://www.pr-table.com/raksul/stories/685"}
+                %img
+                  / {:alt => "eight", :height => "13", :src => "/assets/eight.png", :width => "19"}/
+            %li
+              %a.ftTwitter
+                / {:href => "http://twitter.com/share?url=https://www.pr-table.com/raksul/stories/685&via=PR_Table&text=働きやすさは「精神的なサポート」に宿る。子育て社員と振り返る、ラクスルの仕組み", :target => "_blank"}
+                %i.fa.fa-twitter
+            %li
+              %a.ftHatena
+                / {:href => "http://b.hatena.ne.jp/entry/https://www.pr-table.com/raksul/stories/685"}
+                %img{:height => "13", :src => "", :width => "15"}/
+            %li
+              %a.ftPocket
+                /{:href => "http://getpocket.com/edit?url=https://www.pr-table.com/raksul/stories/685&title=働きやすさは「精神的なサポート」に宿る。子育て社員と振り返る、ラクスルの仕組み"}
+                %img
+                  / {:height => "13", :src => "/assets/pocket.png", :width => "15"}/
+        .container--storyCt__content-footer-infoWrapper
+          .ftInfo
+            .ftTags
+              %a
+                topicA
+                / {:href => "/tag/%E7%A4%BE%E5%86%85%E5%88%B6%E5%BA%A6"}
+              %a
+                topicB
+                / {:href => "/tag/%E7%A6%8F%E5%88%A9%E5%8E%9A%E7%94%9F"}
+              %a
+                topicC
+                /{:href => "/tag/%E5%A5%B3%E6%80%A7%E3%81%AE%E6%B4%BB%E8%BA%8D"}
+            %date
+              = @story.created_at
+        .container--storyCt__content-footer-profile
+          .container--storyCt__content-footer-profile-info
+            / {"data-original" => "/upimgs/cover_images/136/large/fe4376c000d3b845906fd4208a3457cbf22954db.jpg?1465265988"}
+            .container--storyCt__content-footer-profile-info-background
+            .container--storyCt__content-footer-profile-info-companyWrapper
+              .companyHead
+                .companyLogo
+                  %figure
+                    .logoImg
+                      %a
+                        /{:href => "/raksul"}
+                        %img
+                          / {:src => "/upimgs/profile_images/926/medium/b42d77d7c6f5f189a70dce0e7156a31004a4c0e6.png?1501749720"}/
+                    %figcaption.companyName
+                      %a
+                        / {:href => "/raksul"} ラクスル株式会社
+                .companyLink
+                  %a
+                    / {:href => "/raksul"}
+                    %i.fa.fa-chevron-right
+                      / {"aria-hidden" => "true"}>
+                    / この会社について
+              .storyCtBtns
+                %ul
+                  %li
+                    %a.entry
+                      / {:href => "https://recruit.raksul.com/guideline/", :onclick => "ga('send', 'event', '働く', 'クリック', 'ラクスル株式会社');", :target => "_blank"}
+                      働きたい
+                      %i.fa.fa-building-o
+                        / {"aria-hidden" => "true"}
+                  %li
+                    %a.service
+                      / {:href => "https://corp.raksul.com/", :onclick => "ga('send', 'event', '事業', 'クリック', 'ラクスル株式会社');", :target => "_blank"}
+                      事業を知る
+                      %i.fa.fa-line-chart
+                        / {"aria-hidden" => "true"}
+                  %li
+                    %a#inquiry.coverage
+                      / {:href => "/reply/685", :onclick => "ga('send', 'event', 'メッセージ', 'クリック', 'ラクスル株式会社');"}
+                      取材したい
+                      %i.fa.fa-pencil
+                        / {"aria-hidden" => "true"}
+          .container--storyCt__content-footer-profile-otherStory
+            %article
+              %a
+                / {:href => "/raksul/stories/639"}
+                .hoverground
+                .storyCtFtImg
+                  / {"data-original" => "/upimgs/story_images/3360/large/b6ba3b4837b68b72cce88455b9864372198429ff.jpg?1498105868"}
+                / %strong 新卒2年目社員と考えた、急成長のドライバーである「ラクスルらしさ」の正体
+                / %p ラクスル株式会社
+      / %section.container--storyCt__content-relativeStory
+      /   %h3 関連ストーリー
+      /   .relativeWrapper
+      /     %article
+      /       %a
+      /         / {:href => "/OpenNetworkLab/stories/607"}
+      /         .hoverground
+      /         .storyCtFtImg
+      /           / {"data-original" => "/upimgs/story_images/3217/large/961cf9da19b3e2371b666dfe666133f5c45fdfa9.jpg?1496390792"}
+      /         %strong シリコンバレーやアジアからの参加からも！ Onlabは世界の起業家とともに未来を創る
+      /         %p Open Network Lab
+      /     %article
+      /       %a
+      /         / {:href => "/mobilefactory/stories/519"}
+      /         .hoverground
+      /         .storyCtFtImg
+      /           / {"data-original" => "/upimgs/story_images/2698/large/b9f48814f10ee66b7cfa8eaecc451fbc30102287.jpg?1490056806"}
+      /         %strong 入社1年目でベストクリエイター賞を獲得ーー新卒デザイナー、その活躍の舞台裏
+      /         %p 株式会社モバイルファクトリー
+      /     %article
+      /       %a
+      /         / {:href => "/netjinzaibank/stories/92"}
+      /         .hoverground
+      /         .storyCtFtImg
+      /           / {"data-original" => "/upimgs/story_images/415/large/25688094d35d68617d9e019c13d439d7160f369d.JPG?1452753593"}
+      /         %strong NEC、そしてGREE−−本気で世界一を目指していたエンジニアは、なぜ 「NET jinzai bank」 を選んだのか？
+      /         %p NET jinzai bank
+      /     %article
+      /       %a
+      /         / {:href => "/sho-pat/stories/644"}
+      /         .hoverground
+      /         .storyCtFtImg
+      /           / {"data-original" => "/upimgs/story_images/3382/large/f562b6c155a0936e86b34b6ae0daa27b2a8823c3.jpg?1498196692"}
+      /         %strong 国際的な視野で描く、知的財産権の未来――弁理士・東谷幸浩の知性とサービス精神
+      /         %p 正林国際特許商標事務所
+      /     %article
+      /       %a
+      /         / {:href => "/neo-career/stories/29"}
+      /         .hoverground
+      /         .storyCtFtImg
+      /           / {"data-original" => "/upimgs/story_images/116/large/c34585f405d9ee359848faf0382a11252416fc2f.jpg?1444706395"}
+      /         %strong 子どもたちがオフィスでビジネス体験！？ 社員家族向けイベント「NeoFes」とは？
+      /         %p 株式会社ネオキャリア
+      /     %article
+      /       %a
+      /         / {:href => "/wondershake/stories/202"}
+      /         .hoverground
+      /         .storyCtFtImg
+      /           / {"data-original" => "/upimgs/story_images/939/large/37bd7e04ada4c00d2bf27ff330f577653f7bd951.jpg?1466074001"}
+      /         %strong “どん底”から這い上がり、世界に再度挑戦していく――Wondershakeの過去、現在、そして未来
+      /         %p 株式会社Wondershake
+      /     %article
+      /       %a
+      /         / {:href => "/miraishokudo/stories/145"}
+      /         .hoverground
+      /         .storyCtFtImg
+      /           / {"data-original" => "/upimgs/story_images/635/large/9545d6813e7f2d2ca7a9984a5e762c20a4ce4674.jpg?1459752612"}
+      /         %strong “善い悪い“の概念を超えて…未来食堂が手がける新サービス「サロン18禁」のカラクリ
+      /         %p 未来食堂
+      /     %article
+      /       %a
+      /         / {:href => "/Netprotections/stories/217"}
+      /         .hoverground
+      /         .storyCtFtImg
+      /           / {"data-original" => "/upimgs/story_images/1038/large/37c7fbaebb319e8608031e628842e6feb42d892a.jpg?1466763421"}
+      /         %strong 学生の口コミで広がり人気を得た、サマーインターンシップに込められた想いとは？
+      /         %p 株式会社ネットプロテクションズ
+      / %section.container--storyCt__content-footer-relativeStory
+      /   %h3 注目ストーリー
+      /   .relative-wrapper
+      /     %article
+      /       %a
+      /         / {:href => "/raksul/stories/685"}
+      /         .hoverground
+      /         .storyCtFtImg
+      /           / {"data-original" => "/upimgs/story_images/3597/large/96fc2cb6b57616642135d2eefcb2d2db6019261b.jpg?1501121062"}
+      /         %strong 働きやすさは「精神的なサポート」に宿る。子育て社員と振り返る、ラクスルの仕組み
+      /         %p ラクスル株式会社
+      /     %article
+      /       %a
+      /         / {:href => "/sakura-ad/stories/672"}
+      /         .hoverground
+      /         .storyCtFtImg
+      /           / {"data-original" => "/upimgs/story_images/3536/large/cf2b584b07a866b0c6fd39cda965fd55eba5f916.jpg?1500543562"}
+      /         %strong 新たな人材・スキルは不要！ IoT事業の可能性を拓く「sakura.io」
+      /         %p さくらインターネット株式会社
+      /     %article
+      /       %a
+      /         / {:href => "/OpenNetworkLab/stories/376"}
+      /         .hoverground
+      /         .storyCtFtImg
+      /           / {"data-original" => "/upimgs/story_images/1890/large/d527383b6e118ca7a377701e9312f6dd297e8210.jpg?1479378451"}
+      /         %strong 日本の起業家が世界へ羽ばたく支援をーーOpen Network Lab創設者の想い
+      /         %p Open Network Lab
+      /     %article
+      /       %a
+      /         / {:href => "/recruitcareer/stories/173"}
+      /         .hoverground
+      /         .storyCtFtImg
+      /         / {"data-original" => "/upimgs/story_images/839/large/6103506186baab360db3fc736c6a0c487cec5174.jpeg?1464009344"}
+      /         %strong 「人生は、波瀾万丈なくらいがおもしろい」ーー35年間リクルートと共に歩んだ男の軌跡
+      /         %p 株式会社リクルートキャリア
