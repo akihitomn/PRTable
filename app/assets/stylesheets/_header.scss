@@ -12,11 +12,19 @@
         display: table;
         table-layout: fixed;
         line-height: 60px;
+        white-space: nowrap;
         #logo {
           display: table-cell;
           vertical-align: middle;
           width: 95px;
+          padding-left: 2em;
           a {
+            color: #333;
+            text-decoration: none;
+            img {
+              border: none;
+              vertical-align: middle;
+            }
           }
         }
         #g-nav {
@@ -37,6 +45,7 @@
           }
         }
         .buttons {
+          padding-left: 3em;
           display: table-cell;
           vertical-align: middle;
           box-sizing: border-box;
@@ -81,6 +90,8 @@
                 // font: normal normal normal 14px/1 FontAwesome;
               }
               #search-form {
+                clearfix: both;
+                display: block;
                 #search {
                 }
               }
