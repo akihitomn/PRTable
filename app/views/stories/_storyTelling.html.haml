@@ -1,0 +1,25 @@
+.storyTell
+  %section.storyTell__form
+    %h1 ストーリーを作成
+    = form_for [@company, @story] do |f|
+      - if @story.errors.any?
+        #error_explanation
+          %h2
+            #{@story.errors.count}件のエラーが発生しました。
+          %ul
+            - @story.errors.full_messages.each do |story|
+              %li= story
+      .storyTell__form--input
+        .storyTell__form--input-heading
+          = f.label :title, "タイトル"
+        = f.text_field :title, class: "storyTell__form--input-middleField"
+      .storyTell__form--input
+        .storyTell__form--input-heading
+          = f.label :body, "ストーリー"
+        = f.text_field :body, class: "storyTell__form--input-largeField"
+      .storyTell__form--input
+        .storyTell__form--input-heading
+          = f.label :image do
+            = f.file_field :image, class: "storyTell__form--input-picture", style: "display: none;"
+            %i.fa.fa-picture-o
+      = f.submit "投稿", class: "storyTell__form--btn"

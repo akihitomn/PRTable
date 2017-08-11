@@ -1,60 +1,38 @@
 class StoriesController < ApplicationController
-  before_action :set_story, only: [:show, :edit, :update, :destroy]
+  before_action :set_company, only: [:new, :create, :update, :edit, :show]
+  # before_action :set_story, only: [:show]
 
-  # GET /stories
-  # GET /stories.json
   def index
-    @stories = Story.all
+    if @story != nil
+      @story = Story.find(params[:id])
+    else
+      redirect_to :root
+    end
   end
 
-  # GET /stories/1
-  # GET /stories/1.json
   def show
+    @story = Story.find(params[:id])
   end
 
-  # GET /stories/new
   def new
     @story = Story.new
   end
 
-  # GET /stories/1/edit
   def edit
   end
 
-  # POST /stories
-  # POST /stories.json
   def create
-    @story = Story.new(story_params)
-      if @story.save
-        redirect_to :root
-      end
-    # respond_to do |format|
-    #   if @story.save
-    #     format.html { redirect_to @story, notice: 'Story was successfully created.' }
-    #     format.json { render :show, status: :created, location: @story }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @story.errors, status: :unprocessable_entity }
-    #   end
-    # end
+    @story = @company.stories.new(story_params)
+    if @story.save
+      redirect_to :root
+    else
+      reder :new
+    end
   end
 
-  # PATCH/PUT /stories/1
-  # PATCH/PUT /stories/1.json
   def update
-    # respond_to do |format|
-    #   if @story.update(story_params)
-    #     format.html { redirect_to @story, notice: 'Story was successfully updated.' }
-    #     format.json { render :show, status: :ok, location: @story }
-    #   else
-    #     format.html { render :edit }
-    #     format.json { render json: @story.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
-  # DELETE /stories/1
-  # DELETE /stories/1.json
   def destroy
     # @story.destroy
     # respond_to do |format|
@@ -65,12 +43,16 @@ class StoriesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_company
+      @company = Company.find(params[:company_id])
+    end
+
     # def set_story
-    #   @story = Story.find(params[:id])
+    #   @story = Story.find(id: story.id)
     # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def story_params
-      params.require(:story).permit(:title, :story, :image)
+      params.require(:story).permit(:title, :body, :image).merge(user_id: current_user.id)
     end
-end
+  end

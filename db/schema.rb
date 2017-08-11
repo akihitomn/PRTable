@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170729120430) do
+ActiveRecord::Schema.define(version: 20170810161541) do
 
   create_table "companies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
@@ -33,10 +33,12 @@ ActiveRecord::Schema.define(version: 20170729120430) do
 
   create_table "stories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title", null: false
-    t.text "story", null: false
-    t.string "image"
+    t.text "body", null: false
+    t.string "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "company_id"
   end
 
   create_table "story_topics", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -65,8 +67,7 @@ ActiveRecord::Schema.define(version: 20170729120430) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "company_id"
-    t.index ["company_id"], name: "index_users_on_company_id"
+    t.integer "company_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name"], name: "index_users_on_name"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
