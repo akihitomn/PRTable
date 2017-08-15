@@ -1,4 +1,11 @@
 ja:
+  activerecord:
+    attributes:
+      story:
+        title: タイトル
+        body: ストーリー
+        image: 画像
+
   errors:
     messages:
       not_found: "は見つかりませんでした"
