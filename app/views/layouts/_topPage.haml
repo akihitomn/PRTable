@@ -3,23 +3,39 @@
     = render 'layouts/header'
     %section#p-stories
       .picup-2stories
+        - 1.upto(1 - @stories.count) do |i|
+          .story
+            %a.storyLeft
+              %p.img
+                = image_tag "http://media.istockphoto.com/photos/japanese-baby-girl-is-happy-with-fruits-picture-id487108170", class: 'top_img'
+                %span.company-name.top-company_name
+                  株式会社空条●太郎 ※サンプル
+                %strong.story-title.top-title
+                  てめーの敗因は…たったひとつだぜ…たったひとつの単純な答えだ…『てめーはおれを怒らせた』
+        - 1.upto(1 - @stories.offset(1).count) do |i|
+          .story
+            %a.storyRight
+              %p.img
+                = image_tag "http://media.istockphoto.com/photos/happy-child-using-a-megaphone-with-blackboard-picture-id491705959", class: 'top_img'
+                %span.company-name.top-company_name ナラ●チャ・ギルガ株●会社 ※サンプル
+                %strong.story-title.top-title ボラボラボラ…ボラーレ・ヴィーア(飛んでいきな)
         - @stories.limit(1).each do |story|
           .story
-            %a{href: "/companies/#{story.company.id}/stories/#{story.id}"}
+            %a.storyLeft{href: "/companies/#{story.company.id}/stories/#{story.id}"}
               %p.img
                 = image_tag story.image, class: 'top_img'
-                %span.story-left-name.top-company_name
+                %span.company-name.top-company_name
                   = story.company.name
-                %strong.story-left-title.top-title
+                %strong.story-title.top-title
                   = story.title
         - @stories.limit(1).offset(1).each do |story|
           .story
-            %a{href: "/companies/#{story.company.id}/stories/#{story.id}"}
+            %a.storyRight{href: "/companies/#{story.company.id}/stories/#{story.id}"}
               %p.img
                 = image_tag story.image, class: 'top_img'
-                %span.story-right-name.top-company_name
+                %span.company-name.top-company_name
                   = story.company.name
-                %strong.story-right-title.top-title
+                %strong.story-title.top-title
                   = story.title
     .container
       %main#left-contents
@@ -33,8 +49,19 @@
                     = story.title
                   %span
                     = story.company.name
+          - 1.upto(15 - @stories.offset(2).count) do |i|
+            .left-contents__block
+              %a
+                .hoverground
+                  = image_tag "http://media.istockphoto.com/photos/japanese-baby-girl-is-trimming-a-christmas-tree-picture-id496036874", class: 'middle-img'
+                  %strong
+                    覚悟とは！暗闇の荒野に！！進むべき道を切り開くことだッ！！！
+                  %span
+                    株式会社ゴールド・エクスペ●エンス・レクイエム  ※サンプル
           = paginate(@stories)
       #side-contents
+        %section.side-stories.topCDWrap
+          = render 'layouts/topDiagnosis'
         %section.side-stories
           %h2 注目ストーリー
           .side-wrap

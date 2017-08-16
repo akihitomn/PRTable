@@ -28,12 +28,7 @@
         - else
           = link_to "アカウント編集/ログアウト", edit_user_registration_url(current_user), class: 'btn'
       #search
-        .search-wrapper{"data-ic-class" => "search-trigger"}
-          %i.fa.fa-search
-          /
-            <form id="search_form">
-            <input id="search" type="text" data-ic-class="search-input" placeholder="ストーリーを検索">
-            </form>
+        = render 'layouts/searchForm'
 .top__header-tags
   %ul
     %li

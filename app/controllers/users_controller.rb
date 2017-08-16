@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  # before_action :set_company, only: [:index]
 
   def index
   end

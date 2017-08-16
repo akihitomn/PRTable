@@ -77,9 +77,9 @@
               width: 40px;
               position: relative;
               top: 50%;
-                // transition: width 0.2s ease-out;
-                // backface-visibility: hidden;
-                i {
+              transition: width 0.2s ease-out;
+              backface-visibility: hidden;
+              i {
                   // position: absolute;
                   // vertical-align: middle;
                   // left: 10px;
@@ -88,6 +88,7 @@
               .fa {
                 // display: inline-block;
                 // font: normal normal normal 14px/1 FontAwesome;
+                // -webkit-font-smoothing: antialiased;
               }
               #search-form {
                 clearfix: both;
@@ -100,6 +101,12 @@
         }
       }
     }
+
+    .searchInputField {
+      border: 1px solid #EBEBEB;
+      outline: none;
+    }
+
 
     .header-tags {
       ul {
