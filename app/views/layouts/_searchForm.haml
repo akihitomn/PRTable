@@ -1,0 +1,20 @@
+.search-wrapper{"data-ic-class" => "search-trigger"}
+  %i.fa.fa-search
+  /   = form_for search_company_stories_path(@searches), method: 'get' do
+  /     = text_field_tag :body, params[:body]
+  /     = submit_tag "ストーリーを検索する"
+
+  / %input#search{"data-ic-class": "search-input", placeholder: "ストーリーを検索", type: "text"}
+
+/ .search-wrapper
+/   .icon-search-container{"data-ic-class" => "search-trigger"}
+/     %span.fa.fa-search
+/     %input.search-input{"data-ic-class" => "search-input", :placeholder => "ストーリーを検索", :type => "text"}/
+/     %span.fa.fa-times-circle{"data-ic-class" => "search-clear"}
+
+
+/ = form_for @story do |f|
+/   = f.collection_select :story_id, Story.all, :id, :body, :selected => 1, placeholder: "ストーリーを検索"
+
+/ %form#search_form
+/   %input#search{"data-ic-class": "search-input", placeholder: "ストーリーを検索", type: "text"}
