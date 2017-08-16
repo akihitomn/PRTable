@@ -1,3 +1,4 @@
+= render 'layouts/header'
 .breadcrumbsWrap
   %section.breadcrumbsWrap--index
     %a{:href => "/"} HOME
@@ -43,13 +44,15 @@
       %section.container--storyCt__content-topics
         %h2
         %figure
-          .storyCt-img
-            %img
-              = image_tag @story.image
-            / {src: "https://www.pr-table.com/upimgs/story_images/3597/large/96fc2cb6b57616642135d2eefcb2d2db6019261b.jpg?1501121062"}
-        .storyCt-body
           %p
-            = @story.body
+            = @story.user.name
+          .storyCt-img
+            = image_tag @story.image
+          .storyCt-body
+            %p
+              = @story.body
+          #likeLinksForm
+            = render partial: 'likes/likeLinks', locals: { company: @company ,story: @story, likes: @likes }
       %section.container--storyCt__content-footer
         .container--storyCt__content-footer-socials
           %ul
@@ -242,3 +245,5 @@
       /         / {"data-original" => "/upimgs/story_images/839/large/6103506186baab360db3fc736c6a0c487cec5174.jpeg?1464009344"}
       /         %strong 「人生は、波瀾万丈なくらいがおもしろい」ーー35年間リクルートと共に歩んだ男の軌跡
       /         %p 株式会社リクルートキャリア
+= render 'layouts/footer-nav'
+= render 'layouts/footer-icons'

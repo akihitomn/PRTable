@@ -3,6 +3,9 @@ class CompaniesController < ApplicationController
 
   def index
     @stories = Story.all.page(params[:page]).per(15).order('created_at DESC')
+    # @tokyo = WeatherJp.get :tokyo
+    # @searches = Story.search(params[:search])
+    # @story = Story.new(:story_id => 1)
   end
 
   def show
@@ -17,7 +20,7 @@ class CompaniesController < ApplicationController
 
   def update
     if @company.update(company_params)
-    redirect_to company_stories_path(@company)
+    redirect_to company_stories_path(@company), notice: '会社情報を編集しました'
   end
 end
 
@@ -25,7 +28,7 @@ def create
   @company = Company.new(company_params)
   @company.users << current_user
   if @company.save
-    redirect_to company_stories_path(current_user)
+    redirect_to company_stories_path(current_user), notice: '会社を新規登録しました'
   else
     render :new
 
