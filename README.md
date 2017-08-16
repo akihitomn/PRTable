@@ -52,6 +52,7 @@
 - has_many :stories
 - has_many :messages
 
+
 <!-- 中間テーブル -->
 
 ## story_topicsテーブル

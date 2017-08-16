@@ -23,3 +23,5 @@
             = f.file_field :image, class: "storyTell__form--input-picture", style: "display: none;"
             %i.fa.fa-picture-o
       = f.submit "投稿", class: "storyTell__form--btn"
+  .another-field-link
+    = link_to "会社情報を編集", edit_company_path(@company)
