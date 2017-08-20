@@ -1,16 +1,3 @@
-// App.story = App.cable.subscriptions.create ("StoryChannel", {
-//   connected: function() {
-//   },
-
-//   disconnected: function() {
-//   },
-
-//   received: (data) {
-//     $('.messages').prepend(data['message']);
-//   },
-// });
-
-
 // $(function(){
 
 //   function appendStoryToSearchbox(story) {
