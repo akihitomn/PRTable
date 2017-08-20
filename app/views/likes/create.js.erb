@@ -1,3 +1,2 @@
-$("<%= @id_name %>").html('<%= escape_javascript(render(partial: "likes/likeLinks", locals: { company: @company, story: @story, likes: @likes, like: @like })) %>');
-$("<%= @id_heart %>").removeClass('fa-heart-o');
-$("<%= @id_heart %>").addClass('fa-heart');
+$("<%= @id_like %>").html('<%= j(render(partial: "likes/likeLinks", locals: { company: @company, story: @story, likes: @likes, like: @like })) %>');
+
