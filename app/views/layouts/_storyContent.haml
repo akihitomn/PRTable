@@ -91,7 +91,10 @@
                 topicC
                 /{:href => "/tag/%E5%A5%B3%E6%80%A7%E3%81%AE%E6%B4%BB%E8%BA%8D"}
             %date
-              = @story.created_at
+              = @story.created_at.strftime('%Y-%m-%d %H:%M')
+        #messageLinksForm
+          .ms
+            = render partial: 'messages/messageLinks', locals: { company: @company ,story: @story, messages: @messages }
         .container--storyCt__content-footer-profile
           .container--storyCt__content-footer-profile-info
             / {"data-original" => "/upimgs/cover_images/136/large/fe4376c000d3b845906fd4208a3457cbf22954db.jpg?1465265988"}

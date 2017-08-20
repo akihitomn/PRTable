@@ -1,0 +1,21 @@
+.ms__content.clearfix
+  - if messages.present?
+    - messages.order('created_at ASC').each do |message|
+      %ul.ms__content--ul
+        %li.ms__content--ul-li
+          %p.ms__content--ul-li-imgField
+            = image_tag message.image, class: 'ms__content--ul-li-imgField-img' if message.image.present?
+          %p.ms__content--ul-li-textField
+            %p.ms__content--ul-li-textField-user
+              = message.user.name
+            %p.ms__content--ul-li-textField-datetime
+              = message.created_at.strftime('%Y-%m-%d %H:%M')
+            %p.ms__content--ul-li-textField-body
+              = message.body
+- if user_signed_in?
+  = form_for [@company, @story, @message], class: 'ms__inputForm' do |f|
+    = f.text_field :body, class: 'ms__inputForm--field', placeholder: 'メッセージを入力してください'
+    = f.label :image, class: 'ms__inputForm--image' do
+      = f.file_field :image, class: 'ms__inputForm--image-field', style: "display:none;"
+      %i.fa.fa-picture-o
+    = f.submit '送信', class: 'ms__inputForm--btn', type: 'submit'

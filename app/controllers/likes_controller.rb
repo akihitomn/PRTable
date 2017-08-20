@@ -17,7 +17,6 @@ class LikesController < ApplicationController
     @story = Story.find(params[:story_id])
     @company = Company.find(params[:company_id])
     @likes = Like.where(story_id: params[:story_id])
-    @id_name = "#like-link-#{@story.id}"
-    @id_heart = "#heart-#{@story.id}"
+    @id_like = "#like-link-#{@story.id}"
   end
 end

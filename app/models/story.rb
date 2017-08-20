@@ -3,11 +3,8 @@ class Story < ApplicationRecord
   belongs_to :company, optional: true
   has_many :topics, through: :story_topics
   has_many :story_topics
-  has_many :messages
+  has_many :messages, dependent: :destroy
   has_many :likes, dependent: :destroy
-  def like_user(user_id)
-    likes.find_by(user_id: user_id)
-  end
   # def self.search(search)
   #   if search
   #     Story.where('body LIKE(?)', "%#{params[:body]}%")

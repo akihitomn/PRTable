@@ -11,10 +11,9 @@ class StoriesController < ApplicationController
 
   def show
     @story = Story.find(params[:id])
-    # @user = User.find(params[:id])
-    # @stories = @story.search(params[:search])
     @likes = Like.where(story_id: params[:id])
-    # like_user(user_id) = likes.find_by(user_id: current_user.id)
+    @message = @story.messages.new
+    @messages = Message.where(story_id: params[:id])
   end
 
   def new
@@ -58,12 +57,13 @@ class StoriesController < ApplicationController
       @company = Company.find(params[:company_id])
     end
 
-    # def set_story
-    #   @story = Story.find(id: story.id)
-    # end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
     def story_params
       params.require(:story).permit(:title, :body, :image).merge(user_id: current_user.id)
     end
+
+    def message_params
+      params.require(:message).permit(:body, :image)
+      # .merge(user_id: current_user.id)
+    end
+
   end
