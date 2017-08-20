@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       # collection do
       #   get 'search'
       # end
+      resources :messages, only: [:create, :destroy]
       resources :likes, only: [:create, :destroy]
     end
   end
