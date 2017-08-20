@@ -1,5 +1,4 @@
 class Message < ApplicationRecord
-  # after_create_commit { MessageBroadcastJob.perform_later self }
   validates :body_or_image, presence: true
   belongs_to :story
   belongs_to :user
