@@ -47,7 +47,7 @@ $(function(){
 
 
   $(function(){
-    setInterval(reload, 5000)
+    setInterval(reload, 50000)
     function reload(){
      var current_url = document.location.pathname;
 
