@@ -16,7 +16,7 @@ module PRTable
     # -- all .rb files in that directory are automatically loaded.
     config.i18n.default_locale = :ja
     config.time_zone = 'Tokyo'
-    config.autoload_paths += %w(#{config.root}/app/models/ckeditor)
+    # config.autoload_paths += %w(#{config.root}/app/models/ckeditor)
   end
 end
 
