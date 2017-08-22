@@ -1,4 +1,7 @@
-class Ckeditor::Asset < ActiveRecord::Base
-  include Ckeditor::Orm::ActiveRecord::AssetBase
-  include Ckeditor::Backend::Paperclip
+class Ckeditor::Asset
+  include Ckeditor::Orm::Mongoid::AssetBase
+
+  delegate :url, :current_path, :content_type, to: :data
+
+  validates :data, presence: true
 end
