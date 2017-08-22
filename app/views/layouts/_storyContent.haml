@@ -50,7 +50,7 @@
             = image_tag @story.image
           .storyCt-body
             %p
-              = @story.body
+              = raw @story.body
           #likeLinksForm
             = render partial: 'likes/likeLinks', locals: { company: @company ,story: @story, likes: @likes }
       %section.container--storyCt__content-footer

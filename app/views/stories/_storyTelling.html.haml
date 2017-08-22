@@ -16,7 +16,7 @@
       .storyTell__form--input
         .storyTell__form--input-heading
           = f.label :body, "ストーリー"
-        = f.text_field :body, class: "storyTell__form--input-largeField"
+        = f.cktext_area :body, class: "storyTell__form--input-largeField", id: "editor"
       .storyTell__form--input
         .storyTell__form--input-heading
           = f.label :image do

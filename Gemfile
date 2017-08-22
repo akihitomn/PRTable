@@ -83,4 +83,4 @@ gem 'rails-i18n'
 gem 'kaminari'
 gem 'weather_jp'
 gem 'bootstrap-sass'
-
+gem 'ckeditor'

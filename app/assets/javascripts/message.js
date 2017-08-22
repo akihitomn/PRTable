@@ -46,27 +46,27 @@ $(function(){
   })
 
 
-  $(function(){
-    setInterval(reload, 50000)
-    function reload(){
-     var current_url = document.location.pathname;
+ //  $(function(){
+ //    setInterval(reload, 50000)
+ //    function reload(){
+ //     var current_url = document.location.pathname;
 
-     $.ajax({
-      url: current_url,
-      type: 'GET',
-      dataType: 'json',
-    })
+ //     $.ajax({
+ //      url: current_url,
+ //      type: 'GET',
+ //      dataType: 'json',
+ //    })
 
-     .done(function(messages){
-      var message_size = $('.ms__content--ul').length;
-      if (message_size !== messages.length){
-        messages.forEach(function(message){
-          html = buildHTML(message);
-        });
-        $('.ms__content').append(html)
-      }
-    })
-   }
- });
+ //     .done(function(messages){
+ //      var message_size = $('.ms__content--ul').length;
+ //      if (message_size !== messages.length){
+ //        messages.forEach(function(message){
+ //          html = buildHTML(message);
+ //        });
+ //        $('.ms__content').append(html)
+ //      }
+ //    })
+ //   }
+ // });
 });
 });

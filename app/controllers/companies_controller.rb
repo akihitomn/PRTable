@@ -20,17 +20,17 @@ class CompaniesController < ApplicationController
 
   def update
     if @company.update(company_params)
-    redirect_to company_stories_path(@company), notice: '会社情報を編集しました'
+      redirect_to company_stories_path(@company), notice: '会社情報を編集しました'
+    end
   end
-end
 
-def create
-  @company = Company.new(company_params)
-  @company.users << current_user
-  if @company.save
-    redirect_to company_stories_path(current_user), notice: '会社を新規登録しました'
-  else
-    render :new
+  def create
+    @company = Company.new(company_params)
+    @company.users << current_user
+    if @company.save
+      redirect_to company_stories_path(current_user), notice: '会社を新規登録しました'
+    else
+      render :new
 
     # respond_to do |format|
       # if @company.save
