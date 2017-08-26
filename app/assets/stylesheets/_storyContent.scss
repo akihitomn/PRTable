@@ -176,14 +176,17 @@
         padding-bottom: 2em;
         .ftInfo {
           .ftTags {
-            font-size: 1rem;
+            font-size: 1.2rem;
             display: inline-block;
-            margin-right: 1em;
+            margin-right: 0.5em;
             color: #666;
             a {
+            margin-right: 0.5em;
+            text-decoration: none;
             }
           }
-          data {
+          date {
+            font-size: 1rem;
           }
         }
       }

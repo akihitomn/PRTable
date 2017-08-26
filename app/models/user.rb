@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_many :stories, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :messages
+  acts_as_taggable
 end

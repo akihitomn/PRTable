@@ -22,6 +22,12 @@
           = f.label :image do
             = f.file_field :image, class: "storyTell__form--input-picture", style: "display: none;"
             %i.fa.fa-picture-o
+      .storyTell__form--input
+        .storyTell__form--input-heading.topicLabel
+          = f.label :tag_list, "トピック"
+        .storyTell__form--input-heading.topicLabel2
+          = f.label :tag_list, "（※複数登録される場合は , で区切って入力してください）"
+        = text_field_tag 'story[tag_list]', @story.tag_list.join(','), class: "storyTell__form--input-middleField"
       = f.submit "投稿", class: "storyTell__form--btn"
   .another-field-link
     = link_to "会社情報を編集", edit_company_path(@company)
