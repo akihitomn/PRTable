@@ -1,0 +1,23 @@
+.breadcrumbsWrap
+  %section.breadcrumbsWrap--index
+    %a{:href => "/"} HOME
+    %a{:href => ""}
+      / = @story.company.name
+    %span
+      / = @story.title
+.tagContainer
+  %main.tagContainer--contents
+    %h1.tagContainer--contents__tag
+      = tag.name
+    %p 全部で#{@stories.length}件あります。
+    %section.tagContainer--contents__stories
+      - @stories.each do |story|
+        .tagContainer--contents__stories-block
+          %a{href: "/companies/#{story.company.id}/stories/#{story.id}"}
+            .hoverground
+              = image_tag story.image, class: 'middle-img'
+              %strong
+                = story.title
+              %span
+                = story.company.name
+      = paginate(@stories)

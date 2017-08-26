@@ -1,0 +1,61 @@
+.tagContainer {
+      box-sizing: border-box;
+      width: 1240px;
+      margin: 2em auto;
+      padding: 0 20px;
+  &--contents {
+        width: 100%;
+        float: left;
+        padding-bottom: 10em;
+    &__tag {
+      font-size: 2.4rem;
+      text-align: center;
+    }
+    p {
+      margin: .5em 0 .5em .5em;
+      font-size: 1.4rem;
+      color: #666;
+    }
+    &__stories {
+      &-block {
+            display: inline-block;
+            width: 280px;
+            height: 100%;
+            margin-right: 5px;
+            margin-bottom: 10px;
+            vertical-align: top;
+        a {
+              display: block;
+              background-color: #FFF;
+              color: #333;
+              text-decoration: none;
+          .hoverground {
+                padding: 13px;
+                min-width: 280px;
+                min-height: 312px;
+            .middle-img {
+                  width: 280px;
+                  height: 180px;
+                  padding: auto;
+                  object-fit: cover;
+                  backgroun-position: center center;
+            }
+            strong {
+                  display:block;
+                  word-wrap: break-word;
+                  margin-top: 0.5em;
+                  overflow: hidden;
+                  font-weight: bold;
+                  padding-bottom: 1rem;
+                  max-width: 245px;
+            }
+            span {
+                  color: #999;
+                  max-width: 245px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
