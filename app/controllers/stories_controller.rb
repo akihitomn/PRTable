@@ -2,6 +2,7 @@ class StoriesController < ApplicationController
   before_action :set_company, only: [:new, :create, :update, :edit, :show]
 
   def index
+    # @stories = Story.all.page(params[:page]).per(15).order('created_at DESC')
     if @story != nil
       @story = Story.find(params[:id])
     else
@@ -14,6 +15,8 @@ class StoriesController < ApplicationController
     @likes = Like.where(story_id: params[:id])
     @message = @story.messages.new
     @messages = Message.where(story_id: params[:id])
+    @tag = ActsAsTaggableOn::Tag.find_by(name: params[:name])
+    @tags = @story.tags
   end
 
   def new
@@ -58,7 +61,7 @@ class StoriesController < ApplicationController
     end
 
     def story_params
-      params.require(:story).permit(:title, :body, :image).merge(user_id: current_user.id)
+      params.require(:story).permit(:title, :body, :image, :tag_list).merge(user_id: current_user.id)
     end
 
     def message_params
